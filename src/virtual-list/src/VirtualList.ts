@@ -305,7 +305,8 @@ export default defineComponent({
       top: number | undefined,
       behavior: ScrollToOptions['behavior']
     ): void {
-      (listElRef.value as HTMLDivElement).scrollTo({
+      if (listElRef.value == null) return
+      ;(listElRef.value as HTMLDivElement).scrollTo({
         left,
         top,
         behavior
